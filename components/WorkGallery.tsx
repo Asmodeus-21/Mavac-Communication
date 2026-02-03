@@ -50,52 +50,54 @@ const workItems: GalleryItem[] = [
 const WorkGallery: React.FC = () => {
   const [activeFilter, setActiveFilter] = useState<Category>(Category.ALL);
 
-  const filteredItems = activeFilter === Category.ALL 
-    ? workItems 
+  const filteredItems = activeFilter === Category.ALL
+    ? workItems
     : workItems.filter(item => item.category === activeFilter);
 
   const categories = Object.values(Category);
 
   return (
-    <section className="py-40 bg-[#0A0A0A] text-white overflow-hidden" id="work">
-      <div className="max-w-7xl mx-auto px-6 md:px-12">
-        <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-16 mb-32">
+    <section className="py-20 md:py-40 bg-gradient-to-br from-[#F9F9FB] via-white to-[#E6E6FA]/10 text-[#1A1A1A] overflow-hidden relative" id="work">
+      {/* Subtle decorative background element */}
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(212,175,55,0.03)_0%,transparent_50%)] pointer-events-none"></div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-12 relative z-10">
+        <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-8 md:gap-16 mb-16 md:mb-32">
           <div>
-            <h2 className="text-xs font-bold tracking-[0.5em] uppercase text-[#D4AF37] mb-8">Selected Works</h2>
-            <h3 className="text-5xl md:text-7xl font-light tracking-tight">Our Portfolio</h3>
+            <h2 className="text-[10px] md:text-xs font-bold tracking-[0.4em] md:tracking-[0.5em] uppercase text-[#D4AF37] mb-6 md:mb-8">Selected Works</h2>
+            <h3 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-light tracking-tight text-[#1A1A1A]">Our Portfolio</h3>
           </div>
-          
-          <div className="flex flex-wrap gap-x-12 gap-y-6">
+
+          <div className="flex flex-wrap gap-x-6 md:gap-x-12 gap-y-4 md:gap-y-6">
             {categories.map(cat => (
               <button
                 key={cat}
                 onClick={() => setActiveFilter(cat)}
-                className={`text-[11px] tracking-[0.4em] uppercase transition-all pb-2 border-b-2 relative ${
-                  activeFilter === cat 
-                    ? 'border-[#D4AF37] text-white font-bold' 
-                    : 'border-transparent text-white/40 hover:text-white'
-                }`}
+                className={`text-[10px] md:text-[11px] tracking-[0.3em] md:tracking-[0.4em] uppercase transition-all pb-2 border-b-2 relative min-h-[44px] flex items-center ${activeFilter === cat
+                  ? 'border-[#D4AF37] text-[#1A1A1A] font-bold'
+                  : 'border-transparent text-[#1A1A1A]/40 hover:text-[#1A1A1A]'
+                  }`}
               >
                 {cat}
                 {activeFilter === cat && (
-                   <span className="absolute -top-1 -right-2 w-1 h-1 bg-[#D4AF37] rounded-full animate-ping"></span>
+                  <span className="absolute -top-1 -right-2 w-1 h-1 bg-[#D4AF37] rounded-full animate-ping"></span>
                 )}
               </button>
             ))}
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-16">
           {filteredItems.map(item => (
             <div key={item.id} className="group relative transition-all duration-700">
               {/* Movie Poster Card */}
-              <div className="relative aspect-[2/3] overflow-hidden rounded-sm border border-white/10 group-hover:border-[#D4AF37]/50 transition-colors duration-700">
-                <img 
-                  src={item.imageUrl} 
-                  alt={item.title} 
+              <div className="relative aspect-[2/3] overflow-hidden rounded-sm border border-[#E6E6FA]/30 group-hover:border-[#D4AF37]/50 transition-colors duration-700 shadow-lg group-hover:shadow-2xl">
+                <img
+                  src={item.imageUrl}
+                  alt={item.title}
                   className="w-full h-full object-cover grayscale brightness-50 group-hover:grayscale-0 group-hover:brightness-100 group-hover:scale-110 transition-all duration-[1.5s] ease-out"
                 />
-                
+
                 {/* Gold Frame Overlay on Hover */}
                 <div className="absolute inset-4 border border-[#D4AF37]/0 group-hover:border-[#D4AF37]/40 transition-all duration-1000 pointer-events-none scale-110 group-hover:scale-100 opacity-0 group-hover:opacity-100"></div>
 
@@ -109,13 +111,13 @@ const WorkGallery: React.FC = () => {
                   </div>
                 </div>
               </div>
-              
+
               <div className="mt-8 flex justify-between items-start">
                 <div>
-                  <h4 className="text-xl font-medium tracking-tight group-hover:text-[#D4AF37] transition-colors duration-500">{item.title}</h4>
-                  <p className="text-white/40 text-[10px] tracking-[0.3em] uppercase mt-2">{item.category}</p>
+                  <h4 className="text-xl font-medium tracking-tight text-[#1A1A1A] group-hover:text-[#D4AF37] transition-colors duration-500">{item.title}</h4>
+                  <p className="text-[#1A1A1A]/50 text-[10px] tracking-[0.3em] uppercase mt-2">{item.category}</p>
                 </div>
-                <div className="w-10 h-10 border border-[#D4AF37]/20 flex items-center justify-center rounded-full group-hover:bg-[#D4AF37] group-hover:text-black transition-all duration-500">
+                <div className="w-10 h-10 border border-[#D4AF37]/30 flex items-center justify-center rounded-full text-[#1A1A1A] group-hover:bg-[#D4AF37] group-hover:text-white transition-all duration-500">
                   <ArrowUpRight size={18} />
                 </div>
               </div>

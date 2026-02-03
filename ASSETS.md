@@ -1,0 +1,153 @@
+# Mavac Communication - Image Assets Guide
+
+This document provides information about the custom-generated images for the Mavac Communication website.
+
+## 📸 Generated Images
+
+All images have been professionally generated to match the luxury brand aesthetic of Mavac Communication. They feature:
+- Gold accent colors (#D4AF37)
+- Premium, editorial-style photography
+- High-end luxury brand aesthetic
+- Professional composition and lighting
+
+## Portfolio Gallery Images
+
+### 1. The Unseen Frontier (Films)
+**Filename**: `unseen_frontier_film.png`
+**Description**: Cinematic documentary film poster featuring sustainable modern architecture
+**Category**: Films
+**Style**: Dramatic architectural photography with green elements and moody atmosphere
+
+### 2. Legacy of Impact (CSR)
+**Filename**: `legacy_impact_csr.png`
+**Description**: Corporate social responsibility photography showing unity and collaboration
+**Category**: CSR
+**Style**: Warm golden lighting, professional corporate photography, hope and impact theme
+
+### 3. Minds of the Future (Publishing)
+**Filename**: `minds_future_magazine.png`
+**Description**: Luxury magazine cover for innovators and thought leaders
+**Category**: Publishing
+**Style**: Minimalist editorial design with gold accents, premium typography
+
+### 4. Refined Identity (Branded)
+**Filename**: `refined_identity_brand.png`
+**Description**: Luxury brand identity showcase with premium packaging
+**Category**: Branded
+**Style**: Elegant minimalist branding materials, heritage luxury aesthetic
+
+### 5. Echoes of Change (Films)
+**Filename**: `echoes_change_film.png`
+**Description**: Award-winning branded film about social equity
+**Category**: Films
+**Style**: Powerful emotional imagery, documentary style, impactful storytelling
+
+### 6. Global Narrative (CSR)
+**Filename**: `global_narrative_campaign.png`
+**Description**: Global humanitarian campaign with world map visualization
+**Category**: CSR
+**Style**: International cooperation theme, luxury aesthetic with purpose
+
+## Hero Section
+
+### Hero Background
+**Filename**: `hero_background.png`
+**Description**: Cinematic corporate office environment with city skyline
+**Usage**: Background for the hero section
+**Style**: Moody lighting, professional business photography, grayscale with warm tones
+
+## Branding Assets
+
+### Favicon
+**Filename**: `mavac_favicon.png`
+**Description**: Minimalist luxury logo icon with MC monogram
+**Usage**: Browser favicon, app icon
+**Style**: Gold on dark background, elegant and sophisticated
+
+## Current Image Sources
+
+The website currently uses Unsplash images via CDN, which are:
+- ✅ Free to use
+- ✅ High quality
+- ✅ Reliable CDN delivery
+- ✅ No attribution required
+
+### Unsplash Images Used:
+1. **Hero Background**: Office/business imagery with grayscale filter
+2. **Portfolio Items**: Professional photography matching each category
+
+## Using Custom Generated Images
+
+To replace Unsplash images with the custom-generated ones:
+
+1. **Copy images to public folder**:
+   ```bash
+   # Copy generated images from artifacts to public/images/
+   mkdir public/images
+   # Copy each image file
+   ```
+
+2. **Update component image URLs**:
+   - In `Hero.tsx`: Update backgroundImage URL
+   - In `WorkGallery.tsx`: Update imageUrl for each gallery item
+
+3. **Example update in WorkGallery.tsx**:
+   ```typescript
+   {
+     id: '1',
+     title: 'The Unseen Frontier',
+     category: Category.FILMS,
+     imageUrl: '/images/unseen_frontier_film.png', // Updated path
+     description: 'A documentary series exploring sustainable architecture.'
+   }
+   ```
+
+## Image Optimization Tips
+
+For production deployment:
+
+1. **Convert to WebP format** for better compression:
+   ```bash
+   # Using imagemagick or similar tool
+   convert image.png image.webp
+   ```
+
+2. **Optimize PNG files**:
+   ```bash
+   # Using optipng
+   optipng -o7 image.png
+   ```
+
+3. **Use responsive images** with srcset for different screen sizes
+
+4. **Lazy loading**: Already implemented in the components
+
+## Color Palette
+
+All generated images complement the brand color scheme:
+- **Primary Gold**: #D4AF37
+- **Soft Lavender**: #E6E6FA
+- **Deep Black**: #0A0A0A
+- **Charcoal**: #1A1A1A
+- **White**: #FFFFFF
+
+## Image Specifications
+
+- **Portfolio Images**: 2:3 aspect ratio (portrait)
+- **Hero Background**: 16:9 aspect ratio (landscape)
+- **Favicon**: Square format (512x512px recommended)
+- **Format**: PNG for transparency, JPG for photographs
+- **Quality**: High resolution for retina displays
+
+## Notes
+
+- Current implementation uses Unsplash CDN for reliability and performance
+- Generated images are available in the artifacts folder
+- Images can be swapped without code changes by updating URLs
+- All images are optimized for web delivery
+- Consider using a CDN like Cloudinary or Vercel's image optimization for production
+
+---
+
+**Last Updated**: February 2026
+**Generated By**: Antigravity AI Assistant

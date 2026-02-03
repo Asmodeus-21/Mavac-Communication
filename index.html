@@ -1,101 +1,172 @@
-
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Mavac Communication | Storytelling with Depth</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-      :root {
-        --luxury-gold: #D4AF37;
-        --soft-lavender: #E6E6FA;
-      }
-      body {
-        font-family: 'Inter', sans-serif;
-        background-color: #FFFFFF;
-        color: #1A1A1A;
-        scroll-behavior: smooth;
-        overflow-x: hidden;
-      }
-      /* Custom Luxury Scrollbar */
-      ::-webkit-scrollbar {
-        width: 8px;
-      }
-      ::-webkit-scrollbar-track {
-        background: #f1f1f1;
-      }
-      ::-webkit-scrollbar-thumb {
-        background: var(--luxury-gold);
-        border-radius: 4px;
-      }
-      ::-webkit-scrollbar-thumb:hover {
-        background: #B8860B;
-      }
-      /* Selection Color */
-      ::selection {
-        background: rgba(212, 175, 55, 0.2);
-        color: #1A1A1A;
-      }
-      
-      .text-gold { color: var(--luxury-gold); }
-      .bg-gold { background-color: var(--luxury-gold); }
-      .border-gold { border-color: var(--luxury-gold); }
-      
-      .fade-in {
-        animation: fadeIn 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-      }
-      @keyframes fadeIn {
-        from { opacity: 0; transform: translateY(30px); }
-        to { opacity: 1; transform: translateY(0); }
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Primary Meta Tags -->
+  <title>Mavac Communication | Luxury Brand Strategy & CSR Storytelling</title>
+  <meta name="title" content="Mavac Communication | Luxury Brand Strategy & CSR Storytelling" />
+  <meta name="description"
+    content="High-end corporate communication and CSR storytelling for luxury brands. Strategic narratives that define legacies through cinematic content, brand makeovers, and purpose-driven campaigns." />
+  <meta name="keywords"
+    content="luxury brand strategy, CSR storytelling, corporate communication, branded content, brand makeover, corporate publishing, social impact, luxury marketing" />
+  <meta name="author" content="Mavac Communication" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://mavac-communication.vercel.app/" />
+  <meta property="og:title" content="Mavac Communication | Luxury Brand Strategy & CSR Storytelling" />
+  <meta property="og:description"
+    content="Strategic narratives that define legacies. High-end corporate communication for brands that lead with purpose and prestige." />
+  <meta property="og:image" content="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://mavac-communication.vercel.app/" />
+  <meta property="twitter:title" content="Mavac Communication | Luxury Brand Strategy & CSR Storytelling" />
+  <meta property="twitter:description"
+    content="Strategic narratives that define legacies. High-end corporate communication for brands that lead with purpose and prestige." />
+  <meta property="twitter:image"
+    content="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="/favicon.png" />
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --luxury-gold: #D4AF37;
+      --soft-lavender: #E6E6FA;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #FFFFFF;
+      color: #1A1A1A;
+      scroll-behavior: smooth;
+      overflow-x: hidden;
+    }
+
+    /* Custom Luxury Scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: #f1f1f1;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: var(--luxury-gold);
+      border-radius: 4px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: #B8860B;
+    }
+
+    /* Selection Color */
+    ::selection {
+      background: rgba(212, 175, 55, 0.2);
+      color: #1A1A1A;
+    }
+
+    .text-gold {
+      color: var(--luxury-gold);
+    }
+
+    .bg-gold {
+      background-color: var(--luxury-gold);
+    }
+
+    .border-gold {
+      border-color: var(--luxury-gold);
+    }
+
+    .fade-in {
+      animation: fadeIn 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
       }
 
-      /* Animated Underline Effect */
-      .gold-underline {
-        position: relative;
-        text-decoration: none;
+      to {
+        opacity: 1;
+        transform: translateY(0);
       }
-      .gold-underline::after {
-        content: '';
-        position: absolute;
-        width: 100%;
-        transform: scaleX(0);
-        height: 1px;
-        bottom: -4px;
-        left: 0;
-        background-color: var(--luxury-gold);
-        transform-origin: bottom right;
-        transition: transform 0.4s cubic-bezier(0.86, 0, 0.07, 1);
-      }
-      .gold-underline:hover::after {
-        transform: scaleX(1);
-        transform-origin: bottom left;
+    }
+
+    /* Animated Underline Effect */
+    .gold-underline {
+      position: relative;
+      text-decoration: none;
+    }
+
+    .gold-underline::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      transform: scaleX(0);
+      height: 1px;
+      bottom: -4px;
+      left: 0;
+      background-color: var(--luxury-gold);
+      transform-origin: bottom right;
+      transition: transform 0.4s cubic-bezier(0.86, 0, 0.07, 1);
+    }
+
+    .gold-underline:hover::after {
+      transform: scaleX(1);
+      transform-origin: bottom left;
+    }
+
+    /* Gold Shimmer Animation */
+    .shimmer-gold {
+      background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.2), transparent);
+      background-size: 200% 100%;
+      animation: shimmer 3s infinite;
+    }
+
+    @keyframes shimmer {
+      0% {
+        background-position: -200% 0;
       }
 
-      /* Gold Shimmer Animation */
-      .shimmer-gold {
-        background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.2), transparent);
-        background-size: 200% 100%;
-        animation: shimmer 3s infinite;
+      100% {
+        background-position: 200% 0;
       }
-      @keyframes shimmer {
-        0% { background-position: -200% 0; }
-        100% { background-position: 200% 0; }
+    }
+
+    /* Floating Animation */
+    .float-animation {
+      animation: float 6s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(0px);
       }
 
-      /* Floating Animation */
-      .float-animation {
-        animation: float 6s ease-in-out infinite;
+      50% {
+        transform: translateY(-10px);
       }
-      @keyframes float {
-        0% { transform: translateY(0px); }
-        50% { transform: translateY(-10px); }
-        100% { transform: translateY(0px); }
+
+      100% {
+        transform: translateY(0px);
       }
-    </style>
+    }
+  </style>
   <script type="importmap">
 {
   "imports": {
@@ -108,7 +179,10 @@
 }
 </script>
 </head>
-  <body>
-    <div id="root"></div>
-  </body>
+
+<body>
+  <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+
 </html>

@@ -1,0 +1,7 @@
+{
+  "name": "Mavac Communication",
+  "description": "High-end Corporate Communication & CSR Storytelling website for luxury brand strategy and purpose-driven narratives.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}

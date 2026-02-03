@@ -27,16 +27,16 @@ const Header: React.FC = () => {
   return (
     <header className="fixed top-0 left-0 w-full bg-white/95 backdrop-blur-md z-50 border-b border-[#E6E6FA]">
       {/* Scroll Progress Bar */}
-      <div 
+      <div
         className="absolute top-0 left-0 h-[2px] bg-[#D4AF37] transition-all duration-150 ease-out"
         style={{ width: `${scrollProgress}%` }}
       />
-      
-      <div className="max-w-7xl mx-auto px-6 md:px-12 h-24 flex items-center justify-between">
-        <div className="flex items-center gap-3 group cursor-pointer">
-          <span className="text-3xl font-bold tracking-tighter text-[#1A1A1A] group-hover:text-[#D4AF37] transition-colors duration-500">MAVAC</span>
-          <div className="w-1.5 h-8 bg-[#D4AF37] group-hover:scale-y-125 transition-transform duration-500"></div>
-          <span className="text-[10px] font-bold tracking-[0.4em] hidden sm:block text-[#D4AF37] opacity-80">COMMUNICATION</span>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-12 h-20 md:h-24 flex items-center justify-between">
+        <div className="flex items-center gap-2 md:gap-3 group cursor-pointer">
+          <span className="text-xl sm:text-2xl md:text-3xl font-bold tracking-tighter text-[#1A1A1A] group-hover:text-[#D4AF37] transition-colors duration-500">MAVAC</span>
+          <div className="w-1 md:w-1.5 h-6 md:h-8 bg-[#D4AF37] group-hover:scale-y-125 transition-transform duration-500"></div>
+          <span className="text-[8px] sm:text-[9px] md:text-[10px] font-bold tracking-[0.3em] md:tracking-[0.4em] text-[#D4AF37] opacity-80">COMMUNICATION</span>
         </div>
 
         {/* Desktop Nav */}
@@ -50,8 +50,8 @@ const Header: React.FC = () => {
               {link.name}
             </a>
           ))}
-          <a 
-            href="#contact" 
+          <a
+            href="#contact"
             className="px-6 py-3 border border-[#D4AF37] text-[10px] font-bold tracking-[0.2em] uppercase hover:bg-[#D4AF37] hover:text-white transition-all duration-500 rounded-sm"
           >
             Start Project

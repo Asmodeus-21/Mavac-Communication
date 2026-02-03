@@ -7,42 +7,42 @@ const workItems: GalleryItem[] = [
     id: '1',
     title: 'The Unseen Frontier',
     category: Category.FILMS,
-    imageUrl: 'https://images.unsplash.com/photo-1497215842964-222b430dc094?q=80&w=2070&auto=format&fit=crop',
+    imageUrl: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop',
     description: 'A documentary series exploring sustainable architecture.'
   },
   {
     id: '2',
     title: 'Legacy of Impact',
     category: Category.CSR,
-    imageUrl: 'https://images.unsplash.com/photo-1542601906990-b4d3fb773b09?q=80&w=2013&auto=format&fit=crop',
+    imageUrl: 'https://images.unsplash.com/photo-1531482615713-2afd69097998?q=80&w=2070&auto=format&fit=crop',
     description: 'CSR reporting reimagined as high-end photography.'
   },
   {
     id: '3',
     title: 'Minds of the Future',
     category: Category.PUBLISHING,
-    imageUrl: 'https://images.unsplash.com/photo-1512820790803-83ca734da794?q=80&w=2098&auto=format&fit=crop',
+    imageUrl: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=2070&auto=format&fit=crop',
     description: 'A biannual magazine for the world\'s leading innovators.'
   },
   {
     id: '4',
     title: 'Refined Identity',
     category: Category.BRANDED,
-    imageUrl: 'https://images.unsplash.com/photo-1523726491678-bf852e717f6a?q=80&w=2070&auto=format&fit=crop',
+    imageUrl: 'https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=2070&auto=format&fit=crop',
     description: 'Visual rebranding for a heritage luxury house.'
   },
   {
     id: '5',
     title: 'Echoes of Change',
     category: Category.FILMS,
-    imageUrl: 'https://images.unsplash.com/photo-1485846234645-a62644f84728?q=80&w=2059&auto=format&fit=crop',
+    imageUrl: 'https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?q=80&w=2069&auto=format&fit=crop',
     description: 'Award-winning branded film on social equity.'
   },
   {
     id: '6',
     title: 'Global Narrative',
     category: Category.CSR,
-    imageUrl: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop',
+    imageUrl: 'https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?q=80&w=2070&auto=format&fit=crop',
     description: 'A strategic campaign for global humanitarian efforts.'
   }
 ];
@@ -91,11 +91,16 @@ const WorkGallery: React.FC = () => {
           {filteredItems.map(item => (
             <div key={item.id} className="group relative transition-all duration-700">
               {/* Movie Poster Card */}
-              <div className="relative aspect-[2/3] overflow-hidden rounded-sm border border-[#E6E6FA]/30 group-hover:border-[#D4AF37]/50 transition-colors duration-700 shadow-lg group-hover:shadow-2xl">
+              <div className="relative aspect-[2/3] overflow-hidden rounded-sm border border-[#E6E6FA]/30 group-hover:border-[#D4AF37]/50 transition-colors duration-700 shadow-lg group-hover:shadow-2xl bg-slate-100">
                 <img
                   src={item.imageUrl}
                   alt={item.title}
+                  loading="lazy"
                   className="w-full h-full object-cover grayscale brightness-50 group-hover:grayscale-0 group-hover:brightness-100 group-hover:scale-110 transition-all duration-[1.5s] ease-out"
+                  onError={(e) => {
+                    const target = e.target as HTMLImageElement;
+                    target.src = 'https://images.unsplash.com/photo-1557804506-669a67965ba0?q=80&w=2070&auto=format&fit=crop';
+                  }}
                 />
 
                 {/* Gold Frame Overlay on Hover */}
